@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+    <div>
+        <h2 th:if="${creditYes != null}" th:txt="${creditYes}"></h2>
+        <h2 th:if="${creditNo != null}" th:txt="${creditNo}"></h2>
+
+        <form action="/mainCredit" th:field="${creditClass}">
+            Miesieczny: <input type="text" th:field="*{income}"/> <br>
+            Wydatki: <input type="text" th:field="*{expenses}"> <br>
+            Ile: <input type="text" th:field="*{loanAmount}"> <br>
+            Jak dlugo: <input type="text" th:field="*{howLong}"> <br>
+            <input type="submit" value="Wyslij">
+
+        </form>
+    </div>
+</body>
+</html>
